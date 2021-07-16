@@ -1,6 +1,6 @@
 const joi = require('joi');
 
-const Validator = {
+const UserValidator = {
     registerValidator: data => {
         const validateSchema = joi.object({
             name: joi.string()
@@ -21,20 +21,7 @@ const Validator = {
         })
 
         return validateSchema.validateAsync(data)
-    },
-
-    loginValidator: data => {
-        const ValidateSchema = joi.object({
-            username: joi.string()
-            .min(6),
-            email: joi.string()
-            .min(6)
-            .email(),
-            pasword: joi.string()
-            .min(6)
-            .required()
-        })
-
-        return validateSchema.validateAsync(data)
     }
 }
+
+module.exports = UserValidator

@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require('../../models/UserModel');
-const { registerValidator } = require('./Validator');
+const { registerValidator } = require('./UserValidator');
 
 const UserController = {
     login: async (req, res) => {
@@ -35,7 +35,6 @@ const UserController = {
 
     createAdmin: async (req, res) => {
         try {
-            
             if(req.user.admin == false)
                 return res.status(403).json({ message: 'Action Denied'})
             
@@ -67,7 +66,7 @@ const UserController = {
         }
     },
 
-    getAllUser: async (req, res) => {
+    getAllUsers: async (req, res) => {
         try {
             if(req.user.admin == false)
                 return res.status(403).json({ message: 'Action Denied'})
@@ -90,6 +89,11 @@ const UserController = {
         catch(err) {
             return res.status(400).json({ message: err.message });
         }
+    },
+    getCurrentUser: async(req, res) => {
+        const user = await User.findOne({ _id: req.user._id })
+
+        return res.status(200).json(user)
     }
 
 }

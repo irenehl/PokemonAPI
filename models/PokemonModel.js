@@ -10,7 +10,7 @@ const PokemonSchema = new Schema({
     dateReleased: String,
     type: [String],
     image: String,
-    category: String,
+    pokedexNumber: Number,
     abilities: [String],
     gender: {
         type: String, 

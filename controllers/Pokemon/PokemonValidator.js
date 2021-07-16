@@ -10,7 +10,10 @@ const PokemonValidator = {
             description: joi.string(),
             dateReleased: joi.string(),
             type: joi.string(),
-            image: joi.string()
+            image: joi.string(),
+            podekexNumber: joi.number(),
+            abilities: joi.array(),
+            gender: joi.array()
         })
 
         return validateSchema.validateAsync(data)
@@ -21,16 +24,34 @@ const PokemonValidator = {
             description: joi.string(),
             dateReleased: joi.string(),
             type: joi.string(),
-            image: joi.string()
+            image: joi.string(),
+            podekexNumber: joi.number(),
+            abilities: joi.array(),
+            gender: joi.array()
         })
 
         return validateSchema.validateAsync(data)
     },
     removePokemon: data => {
-        
+        const validateSchema = joi.object({
+            id: joi.string()
+        })
+
+        return validateSchema.validateAsync(data)
     },
     likePokemon: data => {
+        const validateSchema = joi.object({
+            id: joi.string()
+        })
 
+        return validateSchema.validateAsync(data)
+    },
+    likeManyPokemon: data => {
+        const validateSchema = joi.object({
+            id: joi.array()
+        })
+
+        return validateSchema.validateAsync(data)
     }
 }
 

@@ -9,7 +9,7 @@ router.post('/register', register);
 router.post('/login', passport.authenticate('local', options), login);
 router.post('/create-admin', passport.authenticate('bearer', options), createAdmin);
 
-router.get('/current', getCurrentUser);
+router.get('/current', passport.authenticate('bearer', options), getCurrentUser);
 router.get('/all-users', passport.authenticate('bearer', options), getAllUsers);
 
 router.delete('/delete-user', passport.authenticate('bearer', options), deleteUser);

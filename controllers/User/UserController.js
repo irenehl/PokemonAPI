@@ -5,6 +5,8 @@ const { registerValidator } = require('./UserValidator');
 
 const UserController = {
     login: async (req, res) => {
+        console.log(req.body)
+        
         try {
             if(req.user)
                 return res.status(200).json({
@@ -13,6 +15,7 @@ const UserController = {
             return res.status(404).json({ message: 'User not found' });
         }
         catch(err){
+            console.log(err)
             return res.status(400).json(err.message);
         }
     },
@@ -90,6 +93,7 @@ const UserController = {
             return res.status(400).json({ message: err.message });
         }
     },
+    
     getCurrentUser: async(req, res) => {
         const user = await User.findOne({ _id: req.user._id })
 

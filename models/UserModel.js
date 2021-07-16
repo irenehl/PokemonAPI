@@ -19,7 +19,10 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    admin: Boolean,
+    admin: {
+        type: Boolean,
+        required: true
+    },
     favPokemon: [String]
 })
 

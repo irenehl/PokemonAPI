@@ -23,7 +23,7 @@ const UserSchema = new Schema({
         type: Boolean,
         required: true
     },
-    favPokemon: [String]
+    'fav-pkmn': [String]
 })
 
 module.exports = model('User', UserSchema);

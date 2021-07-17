@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require('../../models/UserModel');
+const Pokemon = require('../../models/PokemonModel');
 const { registerValidator } = require('./UserValidator');
 
 const UserController = {
@@ -98,6 +99,35 @@ const UserController = {
         const user = await User.findOne({ _id: req.user._id })
 
         return res.status(200).json(user)
+    },
+    
+    getLikedPokemon: async(req, res) => {
+        try {
+            let actualLiked = await User.findOne({ _id: req.user._id }).select('fav-pkmn');
+
+            let favPkmn = await Pokemon.find({ name: { $in: actualLiked['fav-pkmn'] } })
+
+            return res.status(200).json({ data: favPkmn });
+        }
+        catch(err) {
+            return res.status(400).json({ message: err.message });
+        }
+    },
+
+    getLikedPokemonByUserId: async(req, res) => {
+        try {
+            if(!req.user.admin)
+                return res.status(403).json({ message: 'Action Denied'})
+
+            let actualLiked = await User.findOne({ _id: req.params.id }).select('fav-pkmn');
+
+            let favPkmn = await Pokemon.find({ name: { $in: actualLiked['fav-pkmn'] } })
+
+            return res.status(200).json({ data: favPkmn });
+        }
+        catch(err) {
+            return res.status(400).json({ message: err.message });
+        }
     }
 
 }

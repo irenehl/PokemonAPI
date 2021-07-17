@@ -7,11 +7,14 @@ const PokemonSchema = new Schema({
         unique: true
     },
     description: String,
-    dateReleased: String,
+    'date-released': Date,
     type: [String],
     image: String,
-    pokedexNumber: Number,
-    abilities: [String],
+    'pokedex-number': {
+        type: Number,
+        unique: true
+    },
+    ability: String,
     gender: {
         type: String, 
         enum: ['male', 'female'],
@@ -19,4 +22,4 @@ const PokemonSchema = new Schema({
     }
 })
 
-module.exports = model('User', PokemonSchema);
+module.exports = model('Pokemon', PokemonSchema);

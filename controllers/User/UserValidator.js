@@ -4,8 +4,8 @@ const UserValidator = {
     registerValidator: data => {
         const validateSchema = joi.object({
             name: joi.string()
-            .min(6)
-            .required(),
+                .min(6)
+                .required(),
             username: joi.string()
             .min(6)
             .required(),

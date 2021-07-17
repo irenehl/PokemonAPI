@@ -8,6 +8,8 @@ const PokemonController = {
         try {
             if (!req.user.admin) return res.status(403).json({ message: 'Action Denied' });
 
+            console.log(typeof parseInt(req.body['pokedex-number'], 10))
+
             await createPokemonValidator(req.body);
 
             const newPokemon = new Pokemon({
@@ -15,7 +17,7 @@ const PokemonController = {
                 description: req.body.description,
                 dateReleased: req.body['date-released'],
                 type: req.body.type,
-                pokedexNumber: req.body['pokedex-number'],
+                pokedexNumber: parseInt(req.body['pokedex-number'], 10),
                 ability: req.body.ability,
                 image: req.file.location,
             });

@@ -1,0 +1,658 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2021-07-17T07:01:17.100Z",
+    "__export_source": "insomnia.desktop.app:v2021.4.1",
+    "resources": [
+        {
+            "_id": "req_c885de3772534a25b428bda7818f0bfe",
+            "parentId": "fld_8736d53f0ae0448e8e7159010414e1b8",
+            "modified": 1626504967122,
+            "created": 1626496402349,
+            "url": "{{ _.base_url }}/pkmn/delete",
+            "name": "Pkmn: Delete",
+            "description": "Admin can delete a Pokemon with the name of the pokemon",
+            "method": "DELETE",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"bulbasaur\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_ab14b5c55b94476c9870a6b795761252"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYyNWIxZmM1YjA2ZjBkNjk5NjVkN2QiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjI2NDk1Nzg3fQ.j4DnWcoBiBoas2KSSO-0IRbEsgW-oa_Z5bwa5lSrsds"
+            },
+            "metaSortKey": -1626496402349,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_8736d53f0ae0448e8e7159010414e1b8",
+            "parentId": "wrk_b5b6433725084a999edfefa4aef5ce86",
+            "modified": 1626468420179,
+            "created": 1626468420179,
+            "name": "Pokemon",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1626468420179,
+            "_type": "request_group"
+        },
+        {
+            "_id": "wrk_b5b6433725084a999edfefa4aef5ce86",
+            "parentId": null,
+            "modified": 1626408731521,
+            "created": 1626408731521,
+            "name": "PokemonAPI",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_ded7c61895734745abe89f40b05f1c48",
+            "parentId": "fld_8736d53f0ae0448e8e7159010414e1b8",
+            "modified": 1626505010555,
+            "created": 1626468432492,
+            "url": "{{ _.base_url }}/pkmn/create",
+            "name": "Pkmn: Create",
+            "description": "With this request the admin can create a pokemon",
+            "method": "POST",
+            "body": {
+                "mimeType": "multipart/form-data",
+                "params": [
+                    {
+                        "name": "name",
+                        "value": "charizard",
+                        "id": "pair_b2c68c6e4f0a4bfbbcaf2efeab91c859"
+                    },
+                    {
+                        "id": "pair_5ba61ba89dc84844ba1cf5e6c896f6bb",
+                        "name": "description",
+                        "value": "flame lizard",
+                        "description": ""
+                    },
+                    {
+                        "id": "pair_7c6f7f0fc892449ea4f3aa635e782887",
+                        "name": "date-released",
+                        "value": "4/22/2021",
+                        "description": ""
+                    },
+                    {
+                        "id": "pair_e94ab8ce17cc4e9b95e60c9669a903c0",
+                        "name": "type[]",
+                        "value": "fire",
+                        "description": ""
+                    },
+                    {
+                        "id": "pair_093767ceff79430b82b55e44f4e3bcd1",
+                        "name": "type[]",
+                        "value": "flying",
+                        "description": ""
+                    },
+                    {
+                        "id": "pair_443ef6cde18143b88ae93f9a54670137",
+                        "name": "pokedex-number",
+                        "value": "6",
+                        "description": ""
+                    },
+                    {
+                        "id": "pair_795ae52666714bbfaaec2e53bccce491",
+                        "name": "ability",
+                        "value": "firespin",
+                        "description": ""
+                    },
+                    {
+                        "id": "pair_484f93d8e721470e866060e1bd10af83",
+                        "name": "image",
+                        "value": "",
+                        "description": "",
+                        "type": "file",
+                        "fileName": "D:\\Descargas\\006.png"
+                    },
+                    {
+                        "id": "pair_10596beb8fd84599a0e5193536d512bd",
+                        "name": "gender",
+                        "value": "female",
+                        "description": ""
+                    }
+                ]
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "multipart/form-data",
+                    "id": "pair_8c74aebb671941c78a533550511906cd"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYyNWIxZmM1YjA2ZjBkNjk5NjVkN2QiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjI2NDk1Nzg3fQ.j4DnWcoBiBoas2KSSO-0IRbEsgW-oa_Z5bwa5lSrsds"
+            },
+            "metaSortKey": -1626468432492,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_7ef7f03b483d42199a6ace9ec52f7d34",
+            "parentId": "fld_8736d53f0ae0448e8e7159010414e1b8",
+            "modified": 1626505024269,
+            "created": 1626501348345,
+            "url": "{{ _.base_url }}/pkmn/create",
+            "name": "Pkmn: Update",
+            "description": "Admin can update the information of a Pokemon",
+            "method": "POST",
+            "body": {
+                "mimeType": "multipart/form-data",
+                "params": [
+                    {
+                        "name": "name",
+                        "value": "charizard",
+                        "id": "pair_b2c68c6e4f0a4bfbbcaf2efeab91c859"
+                    },
+                    {
+                        "id": "pair_5ba61ba89dc84844ba1cf5e6c896f6bb",
+                        "name": "description",
+                        "value": "flame lizard",
+                        "description": ""
+                    },
+                    {
+                        "id": "pair_7c6f7f0fc892449ea4f3aa635e782887",
+                        "name": "date-released",
+                        "value": "4/22/2021",
+                        "description": ""
+                    },
+                    {
+                        "id": "pair_e94ab8ce17cc4e9b95e60c9669a903c0",
+                        "name": "type[]",
+                        "value": "fire",
+                        "description": ""
+                    },
+                    {
+                        "id": "pair_093767ceff79430b82b55e44f4e3bcd1",
+                        "name": "type[]",
+                        "value": "flying",
+                        "description": ""
+                    },
+                    {
+                        "id": "pair_443ef6cde18143b88ae93f9a54670137",
+                        "name": "pokedex-number",
+                        "value": "6",
+                        "description": ""
+                    },
+                    {
+                        "id": "pair_795ae52666714bbfaaec2e53bccce491",
+                        "name": "ability",
+                        "value": "firespin",
+                        "description": ""
+                    },
+                    {
+                        "id": "pair_484f93d8e721470e866060e1bd10af83",
+                        "name": "image",
+                        "value": "",
+                        "description": "",
+                        "type": "file",
+                        "fileName": "D:\\Descargas\\006.png"
+                    },
+                    {
+                        "id": "pair_10596beb8fd84599a0e5193536d512bd",
+                        "name": "gender",
+                        "value": "female",
+                        "description": ""
+                    }
+                ]
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "multipart/form-data",
+                    "id": "pair_8c74aebb671941c78a533550511906cd"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYyNWIxZmM1YjA2ZjBkNjk5NjVkN2QiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjI2NDk1Nzg3fQ.j4DnWcoBiBoas2KSSO-0IRbEsgW-oa_Z5bwa5lSrsds"
+            },
+            "metaSortKey": -1626461835247.375,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_cabc5837c2df4a9797033edc82d32187",
+            "parentId": "fld_8736d53f0ae0448e8e7159010414e1b8",
+            "modified": 1626505054499,
+            "created": 1626498470388,
+            "url": "{{ _.base_url }}/pkmn/",
+            "name": "Pkmn: Get all",
+            "description": "This request get all the pokemons on the database",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_c84e1483e14b4b639cf30ad7d0965f96"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYxYzY3NzM5NzhhODA2OWRmMDFmMWIiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjI2NDYxNDI4fQ.Yy6AX7MZR1opJ40bc-GmQnSplYpP5dmGkQfsKi8_j0s"
+            },
+            "metaSortKey": -1626455238002.75,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_0d53758d7c724d309d457d50bc906b13",
+            "parentId": "fld_8736d53f0ae0448e8e7159010414e1b8",
+            "modified": 1626505067297,
+            "created": 1626496783413,
+            "url": "{{ _.base_url }}/pkmn/fav",
+            "name": "Pkmn: Fav",
+            "description": "User can add a fav pokemon",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"bulbasaur\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_8c74aebb671941c78a533550511906cd"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYyNWIxZmM1YjA2ZjBkNjk5NjVkN2QiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjI2NDk1Nzg3fQ.j4DnWcoBiBoas2KSSO-0IRbEsgW-oa_Z5bwa5lSrsds"
+            },
+            "metaSortKey": -1626442043513.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_a0dfa520bbd048a2ba093e40fa295011",
+            "parentId": "fld_8736d53f0ae0448e8e7159010414e1b8",
+            "modified": 1626505075017,
+            "created": 1626497819574,
+            "url": "{{ _.base_url }}/pkmn/unfav",
+            "name": "Pkmn: Unfav",
+            "description": "The user can unfav a pokemon",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"bulbasaur\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_8c74aebb671941c78a533550511906cd"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYyNWIxZmM1YjA2ZjBkNjk5NjVkN2QiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjI2NDk1Nzg3fQ.j4DnWcoBiBoas2KSSO-0IRbEsgW-oa_Z5bwa5lSrsds"
+            },
+            "metaSortKey": -1626428849024.25,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_c8b9e047e8394deba04329963719edd6",
+            "parentId": "fld_37ef603330f34787a98e82b8b2594d79",
+            "modified": 1626504773861,
+            "created": 1626497975303,
+            "url": "{{ _.base_url }}/users/pkmn",
+            "name": "User: Get Fav",
+            "description": "This request get the fav pokemon of all users",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYyNWIxZmM1YjA2ZjBkNjk5NjVkN2QiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjI2NDk1Nzg3fQ.j4DnWcoBiBoas2KSSO-0IRbEsgW-oa_Z5bwa5lSrsds"
+            },
+            "metaSortKey": -1626497975303,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": false,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_37ef603330f34787a98e82b8b2594d79",
+            "parentId": "wrk_b5b6433725084a999edfefa4aef5ce86",
+            "modified": 1626415495055,
+            "created": 1626408739316,
+            "name": "User",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1626408739316,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_514678058fda41e986446f2713f6bfea",
+            "parentId": "fld_37ef603330f34787a98e82b8b2594d79",
+            "modified": 1626504795253,
+            "created": 1626498332905,
+            "url": "{{ _.base_url }}/users/60f25b1fc5b06f0d69965d7d/pkmn",
+            "name": "User: Get Fav By Id",
+            "description": "This request get a fav pokemon by ID",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYyNWIxZmM1YjA2ZjBkNjk5NjVkN2QiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjI2NDk1Nzg3fQ.j4DnWcoBiBoas2KSSO-0IRbEsgW-oa_Z5bwa5lSrsds"
+            },
+            "metaSortKey": -1626497188826,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_c1d14e696a4d4e9bac1038266a40a040",
+            "parentId": "fld_37ef603330f34787a98e82b8b2594d79",
+            "modified": 1626504811406,
+            "created": 1626415654535,
+            "url": "{{ _.base_url }}/users/delete-user",
+            "name": "User: Delete ",
+            "description": "With this request, the admin can delete an user",
+            "method": "DELETE",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"id\": \"60f1d5633b7a7e0ddc2bdd77\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_0b6d1406c8774090b79f7683f289772b"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYxYzY3NzM5NzhhODA2OWRmMDFmMWIiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjI2NDYxNDI4fQ.Yy6AX7MZR1opJ40bc-GmQnSplYpP5dmGkQfsKi8_j0s"
+            },
+            "metaSortKey": -1626415654535,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_0ac2a36ec43f4f85bfe2acfcf566daf9",
+            "parentId": "fld_37ef603330f34787a98e82b8b2594d79",
+            "modified": 1626504839055,
+            "created": 1626415627275,
+            "url": "{{ _.base_url }}/users/",
+            "name": "User: Get all",
+            "description": "Get all the users on the database. Only the admin has access to this request",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_c84e1483e14b4b639cf30ad7d0965f96"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYxYzY3NzM5NzhhODA2OWRmMDFmMWIiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjI2NDYxNDI4fQ.Yy6AX7MZR1opJ40bc-GmQnSplYpP5dmGkQfsKi8_j0s"
+            },
+            "metaSortKey": -1626415627275,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_a69cba74b147414ebbc40cc6464bbd51",
+            "parentId": "fld_37ef603330f34787a98e82b8b2594d79",
+            "modified": 1626504882670,
+            "created": 1626415608875,
+            "url": "{{ _.base_url }}/users/current",
+            "name": "User: Current",
+            "description": "With the token, this request can give the informtion about the current user",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_a9e5b6c09faf47269e9ecf6a44b6d1cd"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYxYzY3NzM5NzhhODA2OWRmMDFmMWIiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjI2NDYxNDI4fQ.Yy6AX7MZR1opJ40bc-GmQnSplYpP5dmGkQfsKi8_j0s"
+            },
+            "metaSortKey": -1626415608875,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_a5382e24b0ec4ac1a0739793b9792b30",
+            "parentId": "fld_37ef603330f34787a98e82b8b2594d79",
+            "modified": 1626504897871,
+            "created": 1626415556742,
+            "url": "{{ _.base_url }}/users/create-admin",
+            "name": "User: Create Admin",
+            "description": "The admin can create a new admin with this request",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"username\": \"ambrea\",\n\t\"name\": \"Ambrea Ayala\",\n\t\"email\": \"ambrea123@gmail.com\",\n\t\"password\": \"secret123\",\n\t\"admin\": true\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_d8ef2390fb1e4a3a9c9cae6d74643569"
+                }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYxYzY3NzM5NzhhODA2OWRmMDFmMWIiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjI2NDYxNDI4fQ.Yy6AX7MZR1opJ40bc-GmQnSplYpP5dmGkQfsKi8_j0s"
+            },
+            "metaSortKey": -1626415556742,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_2438710eb97649a1b7219bfa7c791d27",
+            "parentId": "fld_37ef603330f34787a98e82b8b2594d79",
+            "modified": 1626504914933,
+            "created": 1626415486615,
+            "url": "{{ _.base_url }}/users/login",
+            "name": "User: Login",
+            "description": "Admin and regular users can use this request",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\t\"username\": \"irenehl\",\n\t\t\"password\": \"secret123\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_0b33252ea97e44169c7441f87c610bfe"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1626415486615,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_7e3c5d068c414725b7ad509e0806358e",
+            "parentId": "fld_37ef603330f34787a98e82b8b2594d79",
+            "modified": 1626504931600,
+            "created": 1626408756122,
+            "url": "{{ _.base_url }}/users/register",
+            "name": "User: Register",
+            "description": "Admin and regular users can use this request",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"username\": \"irenehl\",\n\t\"name\": \"Daniela\",\n\t\"email\": \"26irenelopez@gmail.com\",\n\t\"password\": \"secret123\",\n\t\"admin\": true\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_ca88b88717ff4cd8bf7d05259cffc92a"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1626408756122,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_d938c178700a863e296685fcb5d04f931b420a76",
+            "parentId": "wrk_b5b6433725084a999edfefa4aef5ce86",
+            "modified": 1626495013444,
+            "created": 1626408731676,
+            "name": "Base Environment",
+            "data": {
+                "base_url": "http://localhost:3000"
+            },
+            "dataPropertyOrder": {
+                "&": [
+                    "base_url"
+                ]
+            },
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1626408731676,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_d938c178700a863e296685fcb5d04f931b420a76",
+            "parentId": "wrk_b5b6433725084a999edfefa4aef5ce86",
+            "modified": 1626408731678,
+            "created": 1626408731678,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        },
+        {
+            "_id": "spc_211aeedbaf1641f389c0588162314808",
+            "parentId": "wrk_b5b6433725084a999edfefa4aef5ce86",
+            "modified": 1626408731528,
+            "created": 1626408731528,
+            "fileName": "PokemonAPI",
+            "contents": "",
+            "contentType": "yaml",
+            "_type": "api_spec"
+        }
+    ]
+}

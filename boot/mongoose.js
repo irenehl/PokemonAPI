@@ -1,17 +1,19 @@
-const logger = require('morgan');
+/* eslint-disable no-console */
 const mongoose = require('mongoose');
 
 module.exports = () => {
+    console.log('Connecting');
+
     mongoose.connect(process.env.MONGO_URI, {
         useCreateIndex: true,
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
         .then(() => {
-            logger('Connected to DB');
+            console.log('Connected to DB');
         })
         .catch((err) => {
-            logger(err);
+            console.log(err);
             process.exit(1);
         });
 };

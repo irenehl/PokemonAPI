@@ -3,7 +3,7 @@ const express = require('express');
 
 const router = express.Router();
 const {
-    create, removePokemon, likePokemon, unlikePokemon, getAllPokemon,
+    create, modifyPokemon, removePokemon, likePokemon, unlikePokemon, getAllPokemon,
 } = require('../controllers/Pokemon/PokemonController');
 
 const upload = require('../services/ImageUpload');
@@ -18,6 +18,7 @@ router.post('/create', passport.authenticate('bearer', options), singleUpload, c
 
 router.delete('/delete', passport.authenticate('bearer', options), removePokemon);
 
+router.put('/modify', passport.authenticate('bearer', options), singleUpload, modifyPokemon);
 router.put('/unfav', passport.authenticate('bearer', options), unlikePokemon);
 router.put('/fav', passport.authenticate('bearer', options), likePokemon);
 

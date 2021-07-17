@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const Pokemon = require('../../models/PokemonModel');
 const User = require('../../models/UserModel');
 const { createPokemonValidator, modifyPokemonValidator } = require('./PokemonValidator');
@@ -27,23 +28,31 @@ const PokemonController = {
         }
     },
 
-    // modifyPokemon: async (req, res) => {
-    //     try {
-    //         if (req.user.admin == false)
-    //             return res.status(403).json({ message: 'Action Denied'});
+    modifyPokemon: async (req, res) => {
+        try {
+            if (!req.user.admin) return res.status(403).json({ message: 'Action Denied' });
 
-    //         var actualPokemon = await Pokemon.findOne({ name: req.body.name });
-    //         const updateConflict = await Pokemon.findOne({ name: req.body.name });
+            const pokemon = await Pokemon.findOne(req.params.name);
 
-    //         if (updateConflict)
-    //             throw {error: true, message: "This pokemon already exits"};
-    //         else if (!actualProduct)
-    //             throw {error: true, message: "Product not found"};
+            if (!pokemon) return res.status(404).json({ message: 'Pokemon not found' });
 
-    //     } catch (err) {
-    //         return res.status(400).json(err.message);
-    //     }
-    // },
+            await modifyPokemonValidator(req.body);
+
+            pokemon.name = req.body.name || pokemon.name;
+            pokemon.description = req.body.description || pokemon.description;
+            pokemon.dateReleased = req.body['date-released'] || pokemon.dateReleased;
+            pokemon.type = req.body.type || pokemon.type;
+            pokemon.pokedexNumber = req.body['pokedex-number'] || pokemon.pokedexNumber;
+            pokemon.ability = req.body.ability || pokemon.ability;
+            pokemon.image = req.file.location || pokemon.image;
+
+            await pokemon.save();
+
+            return res.status(200).json({ message: 'Modified successfully', data: pokemon });
+        } catch (err) {
+            return res.status(400).json(err.message);
+        }
+    },
 
     removePokemon: async (req, res) => {
         try {
@@ -78,7 +87,6 @@ const PokemonController = {
 
     likePokemon: async (req, res) => {
         try {
-            // eslint-disable-next-line no-underscore-dangle
             const actualLiked = await User.findOne({ _id: req.user._id }).select('fav-pkmn');
 
             if (actualLiked['fav-pkmn'].includes(req.body.name)) {
@@ -88,7 +96,7 @@ const PokemonController = {
             const newLiked = actualLiked['fav-pkmn'].concat(req.body.name);
 
             const updatedUser = await User.findOneAndUpdate(
-                // eslint-disable-next-line no-underscore-dangle
+
                 { _id: req.user._id }, { $set: { 'fav-pkmn': newLiked } }, { new: true },
             );
 
@@ -100,7 +108,6 @@ const PokemonController = {
 
     unlikePokemon: async (req, res) => {
         try {
-            // eslint-disable-next-line no-underscore-dangle
             const actualLiked = await User.findOne({ _id: req.user._id }).select('fav-pkmn');
 
             if (!actualLiked['fav-pkmn'].includes(req.body.name)) {
@@ -110,7 +117,6 @@ const PokemonController = {
             const newLiked = actualLiked['fav-pkmn'].remove(req.body.name);
 
             const updatedUser = await User.findOneAndUpdate(
-                // eslint-disable-next-line no-underscore-dangle
                 { _id: req.user._id }, { $set: { 'fav-pkmn': newLiked } }, { new: true },
             );
 

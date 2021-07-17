@@ -87,17 +87,16 @@ const PokemonController = {
 
     likePokemon: async (req, res) => {
         try {
-            const actualLiked = await User.findOne({ _id: req.user._id }).select('fav-pkmn');
+            const actualLiked = await User.findOne({ _id: req.user._id }).select('favPkmn');
 
-            if (actualLiked['fav-pkmn'].includes(req.body.name)) {
+            if (actualLiked.favPkmn.includes(req.body.name)) {
                 return res.status(400).json({ message: 'You have already liked this pkmn' });
             }
 
-            const newLiked = actualLiked['fav-pkmn'].concat(req.body.name);
+            const newLiked = actualLiked.favPkmn.concat(req.body.name);
 
             const updatedUser = await User.findOneAndUpdate(
-
-                { _id: req.user._id }, { $set: { 'fav-pkmn': newLiked } }, { new: true },
+                { _id: req.user._id }, { $set: { favPkmn: newLiked } }, { new: true },
             );
 
             return res.status(200).json(updatedUser);

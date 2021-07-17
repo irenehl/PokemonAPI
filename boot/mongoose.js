@@ -2,8 +2,6 @@
 const mongoose = require('mongoose');
 
 module.exports = () => {
-    console.log('Connecting');
-
     mongoose.connect(process.env.MONGO_URI, {
         useCreateIndex: true,
         useNewUrlParser: true,

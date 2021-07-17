@@ -34,13 +34,13 @@ Listed on [package.json](https://github.com/irenehl/PokemonAPI/blob/master/packa
 
 The API needs the next enverionment variables. There are in a dotenv file
 
-| Variable         |
-|------------------|
-| PORT             |
-| MONGO_URI        |
-| TOKEN_KEY        |
-| AWS_KEY_ID       |
-| AWS_KEY          |
+| Variable              |
+|-----------------------|
+| PORT                  |
+| MONGO_URI             |
+| TOKEN_KEY             |
+| AWS_ACCESS_KEY_ID     |
+| AWS_SECRET_ACCESS_KEY |
 
 ## Entities
 

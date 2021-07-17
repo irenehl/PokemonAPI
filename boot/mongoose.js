@@ -1,16 +1,17 @@
+const logger = require('morgan');
 const mongoose = require('mongoose');
 
-module.exports = function () {
+module.exports = () => {
     mongoose.connect(process.env.MONGO_URI, {
         useCreateIndex: true,
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
-    .then(() => {
-        console.log("Connected to DB");
-    })
-    .catch((err) => {
-        console.log(err);
-        process.exit(1);
-    });
-}
+        .then(() => {
+            logger('Connected to DB');
+        })
+        .catch((err) => {
+            logger(err);
+            process.exit(1);
+        });
+};

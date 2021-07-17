@@ -1,17 +1,24 @@
 const passport = require('passport');
-var express = require('express');
-var router = express.Router();
-var { create, removePokemon, likePokemon, unlikePokemon, getAllPokemon } = require('../controllers/Pokemon/PokemonController')
+const express = require('express');
 
-const options = { session: false }
+const router = express.Router();
+const {
+    create, removePokemon, likePokemon, unlikePokemon, getAllPokemon,
+} = require('../controllers/Pokemon/PokemonController');
 
-router.get      ('/', getAllPokemon);
+const upload = require('../services/ImageUpload');
 
-router.post     ('/create', passport.authenticate('bearer', options), create);
+const singleUpload = upload.single('image');
 
-router.delete   ('/delete', passport.authenticate('bearer', options), removePokemon);
+const options = { session: false };
 
-router.put      ('/unfav', passport.authenticate('bearer', options), unlikePokemon);
-router.put      ('/fav', passport.authenticate('bearer', options), likePokemon);
+router.get('/', getAllPokemon);
+
+router.post('/create', passport.authenticate('bearer', options), singleUpload, create);
+
+router.delete('/delete', passport.authenticate('bearer', options), removePokemon);
+
+router.put('/unfav', passport.authenticate('bearer', options), unlikePokemon);
+router.put('/fav', passport.authenticate('bearer', options), likePokemon);
 
 module.exports = router;

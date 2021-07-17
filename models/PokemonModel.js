@@ -2,24 +2,24 @@ const { Schema, model } = require('mongoose');
 
 const PokemonSchema = new Schema({
     name: {
-        type: String, 
+        type: String,
         required: true,
-        unique: true
+        unique: true,
     },
     description: String,
-    'date-released': Date,
+    dateReleased: Date,
     type: [String],
     image: String,
-    'pokedex-number': {
+    pokedexNumber: {
         type: Number,
-        unique: true
+        unique: true,
     },
     ability: String,
     gender: {
-        type: String, 
+        type: String,
         enum: ['male', 'female'],
-        default: 'male'
-    }
-})
+        default: 'male',
+    },
+});
 
 module.exports = model('Pokemon', PokemonSchema);

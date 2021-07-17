@@ -4,26 +4,26 @@ const UserSchema = new Schema({
     username: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
     },
     name: {
-        type: String, 
-        required: true
+        type: String,
+        required: true,
     },
     email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
     },
     password: {
         type: String,
-        required: true
+        required: true,
     },
     admin: {
         type: Boolean,
-        required: true
+        required: true,
     },
-    'fav-pkmn': [String]
-})
+    'fav-pkmn': [String],
+});
 
 module.exports = model('User', UserSchema);

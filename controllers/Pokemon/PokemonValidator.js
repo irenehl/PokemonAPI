@@ -1,7 +1,7 @@
 const joi = require('joi');
 
 const PokemonValidator = {
-    createPokemonValidator: data => {
+    createPokemonValidator: (data) => {
         const validateSchema = joi.object({
             name: joi.string()
                 .min(6)
@@ -26,13 +26,13 @@ const PokemonValidator = {
 
             gender: joi.string()
                 .valid('male', 'female')
-                .required()
-        })
+                .required(),
+        });
 
-        return validateSchema.validateAsync(data)
+        return validateSchema.validateAsync(data);
     },
 
-    modifyPokemonValidator: data => {
+    modifyPokemonValidator: (data) => {
         const validateSchema = joi.object({
             name: joi.string(),
             description: joi.string(),
@@ -41,27 +41,27 @@ const PokemonValidator = {
             image: joi.string(),
             pokedexNumber: joi.number(),
             abilities: joi.array(),
-            gender: joi.string()
-        })
+            gender: joi.string(),
+        });
 
-        return validateSchema.validateAsync(data)
-    },
-    
-    removePokemon: data => {
-        const validateSchema = joi.object({
-            id: joi.string()
-        })
-
-        return validateSchema.validateAsync(data)
+        return validateSchema.validateAsync(data);
     },
 
-    likePokemon: data => {
+    removePokemon: (data) => {
         const validateSchema = joi.object({
-            id: joi.string()
-        })
+            id: joi.string(),
+        });
 
-        return validateSchema.validateAsync(data)
-    }
-}
+        return validateSchema.validateAsync(data);
+    },
 
-module.exports = PokemonValidator
+    likePokemon: (data) => {
+        const validateSchema = joi.object({
+            id: joi.string(),
+        });
+
+        return validateSchema.validateAsync(data);
+    },
+};
+
+module.exports = PokemonValidator;

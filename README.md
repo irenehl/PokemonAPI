@@ -101,4 +101,4 @@ The base of the API are ***User and Pokemon*** so, these are the schemas that ar
 
 ## Endpoints
 
-Endpoints are documented and handled in [Insomnia](https://support.insomnia.rest/) client, refer to [Insomnia JSON file](https://github.com/irenehl/ElaniinBack_test/blob/master/Docs/Insomnia_2021-01-14.json) and import it to client.
+Endpoints are documented and handled in [Insomnia](https://support.insomnia.rest/) client, refer to [Insomnia JSON file](https://github.com/irenehl/PokemonAPI/blob/master/PokemonAPI.json) and import it to client.

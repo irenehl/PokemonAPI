@@ -37,19 +37,19 @@ server.on('listening', onListening);
  */
 
 function normalizePort(val) {
-  port = parseInt(val, 10);
+    port = parseInt(val, 10);
 
-  if (Number.isNaN(port)) {
+    if (Number.isNaN(port)) {
     // named pipe
-    return val;
-  }
+        return val;
+    }
 
-  if (port >= 0) {
+    if (port >= 0) {
     // port number
-    return port;
-  }
+        return port;
+    }
 
-  return false;
+    return false;
 }
 
 /**
@@ -57,25 +57,26 @@ function normalizePort(val) {
  */
 
 function onError(error) {
-  if (error.syscall !== 'listen') {
-    throw error;
-  }
+    if (error.syscall !== 'listen') {
+        throw error;
+    }
 
-  const bind = typeof port === 'string'
-    ? `Pipe ${port}`
-    : `Port ${port}`;
+    // eslint-disable-next-line no-unused-vars
+    const bind = typeof port === 'string'
+        ? `Pipe ${port}`
+        : `Port ${port}`;
 
-  // handle specific listen errors with friendly messages
-  switch (error.code) {
+    // handle specific listen errors with friendly messages
+    switch (error.code) {
     case 'EACCES':
-      process.exit(1);
-      break;
+        process.exit(1);
+        break;
     case 'EADDRINUSE':
-      process.exit(1);
-      break;
+        process.exit(1);
+        break;
     default:
-      throw error;
-  }
+        throw error;
+    }
 }
 
 /**
@@ -83,9 +84,9 @@ function onError(error) {
  */
 
 function onListening() {
-  const addr = server.address();
-  const bind = typeof addr === 'string'
-    ? `pipe ${addr}`
-    : `port ${addr.port}`;
-  debug(`Listening on ${bind}`);
+    const addr = server.address();
+    const bind = typeof addr === 'string'
+        ? `pipe ${addr}`
+        : `port ${addr.port}`;
+    debug(`Listening on ${bind}`);
 }
